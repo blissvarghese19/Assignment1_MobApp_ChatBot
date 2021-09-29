@@ -8,6 +8,7 @@ const app = express();
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static("www"));
 
+
 app.get("/users/:uname", (req, res) => {
     res.end("Hello " + req.params.uname);
 });
@@ -33,6 +34,6 @@ app.post("/sms", (req, res) =>{
     res.end(sResponse + "</Response>");
 });
 
-var port = process.env.PORT || parseInt(process.argv.pop()) || 3002;
+var port = process.env.PORT || parseInt(process.argv.pop()) || 8080;
 
 app.listen(port, () => console.log('Example app listening on port ' + port + '!'));
